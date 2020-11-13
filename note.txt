@@ -1,0 +1,40 @@
+- Ý tưởng:
+    + Tên đề tài: project-share-stories
+    + Đối tượng: 18 - 60
+    + Chức năng
+        # Đăng kí
+        # Đăng nhập
+        # Xem các stories
+        # Tạo story
+        # React lại story của người khác
+
+- Phân tích
+    + Dữ liệu (Thực thể):
+        User (Người dùng): name, email, password
+        Story: content, dateModified, owner
+        Reaction: reactor, story, reactType
+
+    + Chức năng: xác định chức năng đấy tương tác với người dùng như thế nào
+        # Phân tích chức năng đăng kí:
+            1. Bấm vào link đăng kí --> hiển thị form đăng kí
+            2. Người dùng nhập vào: name, email, password, password confirmation
+            3. Bấm nút "Register":
+                Nếu nhập đủ thông tin
+                    --> Kiểm tra có email nào trùng không
+                        --> Lưu người dùng
+                Nếu không nhập đủ thông tin
+                    --> In thông báo lỗi
+                Nếu password != password confirmation
+                    --> In thông báo lỗi
+            
+- Thiết kế:
+    + Thiết kế cho chức năng đăng kí:
+        Thiết kế giao diện
+        Thiết kế thuật toán
+
+- Cài đặt
+    + Cài đặt chức năng đăng kí
+    
+- Kiểm thử
+
+- Triển khai
