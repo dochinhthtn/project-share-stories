@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDuDMZBYSp_xLIo4AT1lIqama0dYrFLdn8",
+            authDomain: "ci52-4700f.firebaseapp.com",
+            databaseURL: "https://ci52-4700f.firebaseio.com",
+            projectId: "ci52-4700f",
+            storageBucket: "ci52-4700f.appspot.com",
+            messagingSenderId: "463438169556",
+            appId: "1:463438169556:web:bc552b57f4701573330241"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
+        integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
     <!-- <input-wrapper label="Tên đăng kí" type="text" error="Nhập vào tên đăng kí" value="hahahaha😁😁😁"></input-wrapper> -->
-    <register-form></register-form>
+    <login-form></login-form>
 </body>
 
 <template id="input-wrapper-template">
@@ -30,5 +56,16 @@
     </form>
 </template>
 
+<template id="login-form-template">
+    <link rel="stylesheet" href="./css/login-form.css">
+    <form id="login-form">
+        <h2>Đăng nhập tài khoản</h2>
+        <input-wrapper id="email" label="Email" type="email"></input-wrapper>
+        <input-wrapper id="password" label="Mật khẩu" type="password"></input-wrapper>
+        <button id="login-button">Đăng nhập</button>
+    </form>
+</template>
+
 <script src="./js/app.js" type="module"></script>
+
 </html>

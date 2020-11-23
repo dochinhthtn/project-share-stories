@@ -26,12 +26,26 @@
                     --> In thông báo lỗi
                 Nếu password != password confirmation
                     --> In thông báo lỗi
-            
+          
+          # Phân tích chức năng đăng nhập
+            1. Bấm vào link đăng nhập --> hiển thị form đăng nhập
+            2. Người dùng phải nhập vào: email, password
+            3. Bấm nút "Đăng nhập"
+                -> Kiểm tra thông tin
+                    Nếu nhập đủ
+                        Kiểm tra email và password
+                            Nếu đúng -> chuyển sang trang index
+                            Nếu ko đúng -> nhập lại
+                    Nếu không nhập đủ: in lỗi
+
 - Thiết kế:
+    + Thiết kế cơ sở dữ liệu
+
     + Thiết kế cho chức năng đăng kí:
         Thiết kế giao diện
         Thiết kế thuật toán
-
+    + THiết kế chi tiết chức năng đăng nhập
+        
 - Cài đặt
     + Cài đặt chức năng đăng kí
     

@@ -1,4 +1,4 @@
-import { checkInputWrapperValue, validateEmail, validateStrongPassword } from "../utils.js";
+import { checkInputWrapperValue, validateEmail, validateStrongPassword, md5 } from "../utils.js";
 
 const $template = document.getElementById('register-form-template');
 
@@ -20,7 +20,7 @@ class RegisterForm extends HTMLElement {
     // khi register-form được thêm vào DOM Tree thì gọi phương thức này 😂
     connectedCallback() {
         // console.log(this);
-        this.$registerForm.onsubmit = (event) => {
+        this.$registerForm.onsubmit = async (event) => {
             event.preventDefault();
 
             // kiểm tra dữ liệu
@@ -42,7 +42,27 @@ class RegisterForm extends HTMLElement {
 
             // kiểm tra tổng thể
             if(isPassed) {
-                alert('đăng kí thành công');
+                // thực hiện check email trùng
+                let result = await firebase
+                    .firestore()
+                    .collection('users')
+                    .where('email', '==', email)
+                    .get();
+                
+                console.log(result);
+                if(result.empty) {
+                    // lưu dữ liệu
+                    await firebase.firestore().collection('users').add({
+                        name: name,
+                        email: email,
+                        password: md5(password)
+                    });
+
+                    alert("Đăng kí tài khoản thành công");
+                } else {
+                    alert("Email " + email + " đã có người sử dụng!");
+                }
+
             }
 
             // A, B, C, D

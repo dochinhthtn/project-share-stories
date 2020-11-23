@@ -24,3 +24,7 @@ export function validateStrongPassword(pwString) {
 
     return strength >= 4;
 }
+
+export function md5(string) {
+    return CryptoJS.MD5(string).toString();
+}
