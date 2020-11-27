@@ -31,9 +31,10 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="mainBody">
+    <nav-bar></nav-bar>
     <!-- <input-wrapper label="Tên đăng kí" type="text" error="Nhập vào tên đăng kí" value="hahahaha😁😁😁"></input-wrapper> -->
-    <login-form></login-form>
+    <!-- <login-form></login-form> -->
 </body>
 
 <template id="input-wrapper-template">
@@ -53,6 +54,8 @@
         <input-wrapper id="password" label="Mật khẩu" type="password"></input-wrapper>
         <input-wrapper id="password-confirmation" label="Xác nhận mật khẩu" type="password"></input-wrapper>
         <button id="register-button">Đăng kí</button>
+        <div>Tôi đã có tài khoản ! <a href="#/sign-in">Đăng nhập ngay</a></div>
+
     </form>
 </template>
 
@@ -63,9 +66,24 @@
         <input-wrapper id="email" label="Email" type="email"></input-wrapper>
         <input-wrapper id="password" label="Mật khẩu" type="password"></input-wrapper>
         <button id="login-button">Đăng nhập</button>
+        <div>Tôi chưa có tài khoản ! <a href="#/sign-up">Đăng kí ngay</a></div>
     </form>
 </template>
 
-<script src="./js/app.js" type="module"></script>
+<template id="navbar-template">
+    <div id="navbar">
+        <div id="brand">
+            <img src="./images/logo.jpg" id="brand-image">
+            <span id="brand-text">Share Stories</span>
+        </div>
 
+        <div id="menu">
+            <a href="#/sign-in">Đăng nhập</a>
+            <a href="#/sign-up">Đăng kí</a>
+        </div>
+    </div>
+</template>
+<script src="//unpkg.com/navigo@6"></script>
+<script src="./js/app.js" type="module"></script>
+<script src="js/route.js" type="module"></script>
 </html>
