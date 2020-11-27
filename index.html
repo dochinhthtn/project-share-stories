@@ -31,8 +31,8 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body id="mainBody">
-    <nav-bar></nav-bar>
+<body id="mainBody" style="margin: 0;">
+    <story-container content="aaaaa" date-modified="30/11/2020" owner="Chinh"></story-container>
     <!-- <input-wrapper label="Tên đăng kí" type="text" error="Nhập vào tên đăng kí" value="hahahaha😁😁😁"></input-wrapper> -->
     <!-- <login-form></login-form> -->
 </body>
@@ -84,7 +84,45 @@
         </div>
     </div>
 </template>
+
+<template id="story-container-template">
+    <link rel="stylesheet" href="./css/story-container.css">
+    <div id="story-container">
+        <div id="info">
+            <div id="owner">Lửng</div>
+            <div id="date-modified">27/11/2020</div>
+        </div>
+
+        <div id="content">
+            Trứng rán cần mỡ
+            Bắp cần bơ
+            Yêu không cần cớ
+            Cần cậu cơ
+        </div>
+
+        <div id="reactions">
+            <button class="reaction-btn">👍</button>
+            <button class="reaction-btn">💖</button>
+            <button class="reaction-btn">🤣</button>
+            <button class="reaction-btn">😥</button>
+            <button class="reaction-btn">😡</button>
+            <button class="reaction-btn">🥰</button>
+        </div>
+    </div>
+</template>
+
+<template id="register-screen">
+    <nav-bar></nav-bar>
+    <register-form></register-form>
+</template>
+
+<template id="login-screen">
+    <nav-bar></nav-bar>
+    <login-form></login-form>
+</template>
+
 <script src="//unpkg.com/navigo@6"></script>
 <script src="./js/app.js" type="module"></script>
 <script src="js/route.js" type="module"></script>
+
 </html>

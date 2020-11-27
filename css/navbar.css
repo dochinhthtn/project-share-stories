@@ -1,0 +1,38 @@
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    background-color: #20948B;
+}
+
+#brand {
+    display: flex;
+    align-items: center;
+}
+
+#brand-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+#brand-text {
+    margin-left: 10px;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+}
+
+#menu > a {
+    color: #d8d8d8;
+    text-decoration: none;
+    margin: 0px 20px;
+}
+
+#menu > a:hover {
+    color: #ffffff;
+}

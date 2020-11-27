@@ -10,12 +10,12 @@ var router = new Navigo(root, useHash);
 //http://127.0.0.1:5500/index.html#/sign-up
 router.on('/sign-up', function() {
     console.log("Đăng kí");
-    document.getElementById("mainBody").innerHTML = "<register-form></register-form>"
+    document.getElementById("mainBody").innerHTML = "<register-screen></register-screen>";
 }).resolve()
 
 router.on("/sign-in", function() {
     console.log("Đăng nhập");
-    document.getElementById("mainBody").innerHTML = "<login-form></login-form>"
+    document.getElementById("mainBody").innerHTML = "<login-screen></login-screen>";
 
 }).resolve()
 
