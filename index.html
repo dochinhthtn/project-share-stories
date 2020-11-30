@@ -111,6 +111,11 @@
     </div>
 </template>
 
+<template id="story-list-template">
+    <!-- hiển thị các story -->
+    <div id="story-list"></div>
+</template>
+
 <template id="register-screen">
     <nav-bar></nav-bar>
     <register-form></register-form>
@@ -121,8 +126,15 @@
     <login-form></login-form>
 </template>
 
+<template id="index-screen">
+    <nav-bar></nav-bar>
+    <story-list id="story-list"></story-list>
+</template>
+
 <script src="//unpkg.com/navigo@6"></script>
 <script src="./js/app.js" type="module"></script>
 <script src="js/route.js" type="module"></script>
 
 </html>
+
+

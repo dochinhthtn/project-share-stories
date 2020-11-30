@@ -17,11 +17,15 @@ router.on("/sign-in", function() {
     console.log("Đăng nhập");
     document.getElementById("mainBody").innerHTML = "<login-screen></login-screen>";
 
-}).resolve()
+}).resolve();
 
 router.notFound(function () {
     document.getElementById("mainBody").innerText = "Đường dẫn không tồn tại";
-})
-router.on(function () {
+});
+
+router.on('/index', function () {
     // router.navigate("/sign-in")
-}).resolve()
+    document.getElementById("mainBody").innerHTML = "<index-screen></index-screen>";
+}).resolve();
+
+window.router = router;

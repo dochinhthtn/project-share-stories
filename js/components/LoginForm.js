@@ -42,7 +42,8 @@ class LoginForm extends HTMLElement {
                 if(result.empty) {
                     alert("Email hoặc mật khẩu không chính xác");
                 } else {
-                    alert("Đăng nhập thành công");
+                    // chuyển trang khi đăng nhập thành công
+                    router.navigate("/index");
                 }
             }
         }

@@ -18,9 +18,6 @@ class StoryContainer extends HTMLElement {
 
     attributeChangedCallback(attrName, oldValue, newValue) {
         switch(attrName) {
-            case 'id':
-                this.id = newValue;
-                break;
             
             case 'owner':
                 this.$owner.innerHTML = newValue;

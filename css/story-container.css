@@ -1,12 +1,19 @@
 #story-container {
-    width: 300px;
-    height: 400px;
+    width: 500px;
+    min-height: 200px;
     background-color: #f1f1f1;
     padding: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 10px;
+    transition: box-shadow 0.3s;
+    margin: 10px 0px;
+}
+
+#story-container:hover {
+    box-shadow: 3px 3px 5px gray;
 }
 
 #info {
@@ -19,5 +26,10 @@
     justify-content: center;
 }
 
-#reactions {
+#reactions .reaction-btn {
+    border: none;
+    background: rgba(255, 255, 255, 0);
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
 }
