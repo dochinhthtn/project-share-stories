@@ -1,4 +1,4 @@
-import { checkInputWrapperValue, validateEmail, md5, makeAuth } from "../utils.js";
+import { checkInputWrapperValue, validateEmail, md5, makeAuth, getDataFromDoc } from "../utils.js";
 
 const $template = document.getElementById('login-form-template');
 
@@ -39,13 +39,14 @@ class LoginForm extends HTMLElement {
                     .where('password', '==', md5(password))
                     .get();
 
-                if(result.empty) {
+                if (result.empty) {
                     alert("Email hoặc mật khẩu không chính xác");
                 } else {
                     // chuyển trang khi đăng nhập thành công
-                    // makeAuth();
-                    // router.navigate("/index");
-                    console.log(result);
+                    makeAuth(getDataFromDoc(result.docs[0], ['password']));
+                    router.navigate("/index");
+                    
+                    // console.log(getDataFromDoc(result.docs[0], ['password']));
                 }
             }
         }

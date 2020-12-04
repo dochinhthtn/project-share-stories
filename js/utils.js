@@ -1,6 +1,6 @@
 export function checkInputWrapperValue($inputWrapper, condition, message) {
     let value = $inputWrapper.value;
-    if(condition(value)) {
+    if (condition(value)) {
         $inputWrapper.error = message;
         return false;
     } else {
@@ -36,8 +36,22 @@ export function makeAuth(user) {
 
 // kiểm tra trạng thái đăng nhập của người dùng, nếu có thì lấy ra thông tin người dùng đó
 export function auth() {
-    if(localStorage.getItem('current-user') != "") 
+    if (localStorage.getItem('current-user') != "")
         return JSON.parse(localStorage.getItem('current-user'));
-    
+
     return false;
+}
+
+// xử lý dữ liệu trả về từ firebase
+export function getDataFromDoc(doc, excepts = []) {
+    // lấy dữ liệu từ doc
+    let result = doc.data();
+    result.id = doc.id;
+
+    // loại những trường thông tin không cần thiết
+    for(let except of excepts) {
+        delete result[except];
+    }
+
+    return result;
 }
