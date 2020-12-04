@@ -1,4 +1,4 @@
-import { checkInputWrapperValue, validateEmail, md5 } from "../utils.js";
+import { checkInputWrapperValue, validateEmail, md5, makeAuth } from "../utils.js";
 
 const $template = document.getElementById('login-form-template');
 
@@ -43,7 +43,9 @@ class LoginForm extends HTMLElement {
                     alert("Email hoặc mật khẩu không chính xác");
                 } else {
                     // chuyển trang khi đăng nhập thành công
-                    router.navigate("/index");
+                    // makeAuth();
+                    // router.navigate("/index");
+                    console.log(result);
                 }
             }
         }

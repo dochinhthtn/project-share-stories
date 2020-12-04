@@ -16,7 +16,7 @@ class IndexScreen extends HTMLElement {
     }
 
     render() {
-        this.$storyList.setAttribute('stories', fakeData);
+        this.$storyList.setAttribute('stories', JSON.stringify(fakeData));
     }
 }
 

@@ -21,8 +21,8 @@ class StoryList extends HTMLElement {
 
     render() {
         // lấy dữ liệu từ thuộc tính
-        let stories = this.getAttribute("stories");
-        
+        let stories = JSON.parse(this.getAttribute("stories")); // getAttribute -> string
+
         stories.forEach((story) => {
             // tạo 1 <story-container>
             let $story = document.createElement('story-container');

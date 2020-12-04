@@ -28,3 +28,16 @@ export function validateStrongPassword(pwString) {
 export function md5(string) {
     return CryptoJS.MD5(string).toString();
 }
+
+// lưu trạng thái người dùng khi đăng nhập
+export function makeAuth(user) {
+    localStorage.setItem('current-user', JSON.stringify(user));
+}
+
+// kiểm tra trạng thái đăng nhập của người dùng, nếu có thì lấy ra thông tin người dùng đó
+export function auth() {
+    if(localStorage.getItem('current-user') != "") 
+        return JSON.parse(localStorage.getItem('current-user'));
+    
+    return false;
+}
