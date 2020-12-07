@@ -28,4 +28,8 @@ router.on('/index', function () {
     document.getElementById("mainBody").innerHTML = "<index-screen></index-screen>";
 }).resolve();
 
+router.on('/create-story', function() {
+    document.getElementById("mainBody").innerHTML = "<create-story-screen></create-story-screen>";
+}).resolve();
+
 window.router = router;

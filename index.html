@@ -29,6 +29,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
         integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
         crossorigin="anonymous"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script> -->
+
 </head>
 
 <body id="mainBody" style="margin: 0;">
@@ -84,7 +88,7 @@
         </div>
 
         <div id="current-user-info" class="nav">
-            <a href="#">➕ Tạo story</a>
+            <a href="#/create-story">➕ Tạo story</a>
             <a href="#" id="current-user-name">Xin chào Lửng</a>
             <a href="#">Đăng xuất</a>
         </div>
@@ -123,6 +127,17 @@
     <div id="story-list"></div>
 </template>
 
+<template id="create-story-form-template">
+    <link rel="stylesheet" href="./css/create-story-form.css">
+    <form id="create-story-form">
+        <textarea id="content" placeholder="Bạn đang nghĩ gì?"></textarea>
+        <button>Đăng</button>
+    </form>
+
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script> -->
+
+</template>
+
 <template id="register-screen">
     <nav-bar></nav-bar>
     <register-form></register-form>
@@ -138,10 +153,13 @@
     <story-list id="story-list"></story-list>
 </template>
 
+<template id="create-story-screen">
+    <nav-bar></nav-bar>
+    <create-story-form></create-story-form>
+</template>
+
 <script src="//unpkg.com/navigo@6"></script>
 <script src="./js/app.js" type="module"></script>
 <script src="js/route.js" type="module"></script>
 
 </html>
-
-
